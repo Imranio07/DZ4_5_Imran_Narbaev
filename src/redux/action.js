@@ -1,7 +1,9 @@
 import {INCREMENT} from "./types";
 
-export function incrementShop() {
+
+export function incrementShop(product) {
     return{
-        type: INCREMENT
+        type: INCREMENT,
+        payload: product
     }
 }
