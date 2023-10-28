@@ -4,9 +4,24 @@ import store from "./redux/store";
 
 function Basket(props) {
   const buy = useSelector((state) => state.buy);
+  console.log(buy)
   return (
     <div>
-      <h1>Your all purchase number: {buy}</h1>
+      {
+        buy?.map((el)=>{
+          return ( 
+            <div>
+                <li key={el.id}>
+                <h2>title-{el.title}</h2>
+                  <p>description-{el.description}</p>
+                  <p>price-{el.price}</p>
+                  <p>discountPercentage: {el.discountPercentage}</p>
+                  <p>rating: {el.rating}</p>
+              </li>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }

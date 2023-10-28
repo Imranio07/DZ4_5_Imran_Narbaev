@@ -1,17 +1,20 @@
 import {createStore} from 'redux'
+import { INCREMENT } from './types'
 
-const initialState ={
-    buy:0
+const initialState = {
+    buy: []
 }
 
 const reducer=(state=initialState,action) => {
-    console.log('reducer>', action);
-    switch(action.type) {
-        case 'INCREMENT':
-            return{
-                ...state,
-                buy: state.buy +1
-            }
+    console.log(99)
+    console.log('reducer>', action.payload)
+    const {type, payload} = action
+    switch(type) {
+        case INCREMENT:
+            return {
+        ...state,
+        buy: [...state.buy, payload],
+      };
         default:
             return state;
     }
