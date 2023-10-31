@@ -15,7 +15,7 @@ function App() {
         <Provider store={store}>
       <Routes>
           <Route path="/" element={<Layout />} >
-              <Route index element={<ProductList />} />
+                  <Route path="list-products" element={<ProductList />} />
               <Route path="basket" element={<Basket/>} />
           </Route>
       </Routes>
